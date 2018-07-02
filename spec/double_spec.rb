@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe "Using Doubles" do
+RSpec.describe "Doubles" do
   # Instead of using instances in these tests, 
   # replace each of these with a 'leaf' test double
-  it "has a green color" do
+  it "leaf returns expected color" do
     tree = Tree.new
     branch = Branch.new(tree)
     leaf = Leaf.new(branch)
@@ -13,7 +13,7 @@ RSpec.describe "Using Doubles" do
     expect(leaf).to_not be_instance_of(Leaf)
   end
 
-  it "has a branch that is of 4 feet in length" do
+  it "leaf's branch returns expected length" do
     tree = Tree.new
     branch = Branch.new(tree)
     leaf = Leaf.new(branch)
@@ -24,7 +24,7 @@ RSpec.describe "Using Doubles" do
     expect(leaf.branch).to_not be_instance_of(Branch)
   end
 
-  it "has a tree with thick and brown bark" do
+  it "leaf's branch's tree returns expected bark" do
     tree = Tree.new
     branch = Branch.new(tree)
     leaf = Leaf.new(branch)

@@ -43,7 +43,7 @@ In this line, our `arg` double is passed to `method_under_test`. We expect this 
 
 ## Solving This Lab
 
-To solve this lab, replace the application objects within the test file with `double`s. In each example, you can remove the first three lines that create a `tree`, `branch`, and `leaf` instance. Instead, replace these lines with a `double` named 'leaf' that creates the functionality needed to pass the given expectations.
+To solve this lab, replace the application objects within the test file with `double`s. In each example, you can remove the first three lines that create a `tree`, `branch`, and `leaf` instance. Instead, replace these lines with a `double` named 'leaf' that creates the functionality needed to pass the given expectations. Leave the `expect`ations unchanged.
 
 ## Types of Test Doubles
 
