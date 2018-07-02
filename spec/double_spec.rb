@@ -1,6 +1,8 @@
 require "spec_helper"
 
-RSpec.describe Leaf do
+RSpec.describe "Using Doubles" do
+  # Instead of using instances in these tests, 
+  # replace each of these with a 'leaf' test double
   it "has a green color" do
     tree = Tree.new
     branch = Branch.new(tree)
