@@ -16,7 +16,7 @@ def method_under_test(arg)
 end
 ```
 
-Using a `double` method to test this assertion could look like:
+Using a `double` to test this assertion could look like:
 
 ```ruby
 RSpec.describe "#method_under_test" do
@@ -33,17 +33,17 @@ Lets break down the execution code in the example above.
 arg = double("descriptive name for this double", call_to_google: true)
 ```
 
-This line creates an `arg` variable that holds a `double` object. This object has a name of `"descriptive name"`, and then a value of `true` that will be returned when `#call_to_google` is called on it.
+This line creates an `arg` variable that holds a `double` object. This object has a name of `"descriptive name"`, and then a value of `true` that will be returned when `#call_to_google` is called on `arg`.
 
 ```ruby
 expect(method_under_test(arg)).to eq(Record.find(name: "foo"))
 ```
 
-In this line, our `arg` double is passed to `method_under_test`. We expect this invocation to return a `Record` object with a `name` of `foo`.
+In this line, our `arg` double object is passed to `method_under_test`. We expect this invocation to return a `Record` object with a `name` of `foo`.
 
 ## Solving This Lab
 
-To solve this lab, replace the application objects within the test file with `double`s. In each example, you can remove the first three lines that create a `tree`, `branch`, and `leaf` instance. Instead, replace these lines with a `double` named 'leaf' that creates the functionality needed to pass the given expectations. Leave the `expect`ations unchanged.
+To solve this lab, replace the application objects within the test file with `double`s. In each example, you can remove the first three lines that create a `tree`, `branch`, and `leaf` instance. Replace these lines with a `double` named 'leaf' that creates the functionality needed to pass the given expectations. Leave the `expect`ations unchanged.
 
 ## Types of Test Doubles
 
