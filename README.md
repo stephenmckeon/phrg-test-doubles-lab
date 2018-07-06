@@ -6,7 +6,7 @@ A "test double" is a generic term that stands for any object or procedure that s
 
 There are often times when it is necessary to setup code that is not specifically under test. Instead of using actual objects in use in your application code, it may be appropriate to use a test double.
 
-For example, you may be testing that a method returns a record, but only when a response from an outside source is successful (lets use Google). During that method, you do not want the code to actually make a request to Google. Your test is not there to check any behavior with Google, it just wants to verify that the method returns the right record when a `call_to_google` is successful. This could look like:
+For example, you may be testing that a method returns a record, but only when a response from an outside source is successful (let's use Google). During that method, you do not want the code to actually make a request to Google. Your test is not there to check any behavior with Google, it just wants to verify that the method returns the right record when a `call_to_google` is successful. This could look like:
 
 ```ruby
 def method_under_test(arg)
@@ -27,7 +27,7 @@ RSpec.describe "#method_under_test" do
 end
 ```
 
-Lets break down the execution code in the example above.
+Let's break down the execution code in the example above.
 
 ```ruby
 arg = double("descriptive name for this double", call_to_google: true)
@@ -55,7 +55,7 @@ There are 5 types of test doubles. The above is an example a mock. These 5 types
 - Dummy objects
 - Fake objects
 
-To learn more about the vaious types of doubles, check out [Stubs, Mocks and Spies in RSpec](https://about.futurelearn.com/blog/stubs-mocks-spies-rspec) and [Mocks aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html).
+To learn more about the various types of doubles, check out [Stubs, Mocks and Spies in RSpec](https://about.futurelearn.com/blog/stubs-mocks-spies-rspec) and [Mocks aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html).
 
 ## Resources
 
