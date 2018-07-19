@@ -6,7 +6,7 @@ A "test double" is a generic term that stands for any object or procedure that s
 
 There are often times when it is necessary to setup code that is not specifically under test. Instead of using actual objects in use in your application code, it may be appropriate to use a test double.
 
-For example, you may be testing that a method returns a record, but only when a response from an outside source is successful (lets use Google). During that method, you do not want the code to actually make a request to Google. Your test is not there to check any behavior with Google, it just wants to verify that the method returns the right record when a `call_to_google` is successful. This could look like:
+For example, one may be testing that a method returns a record object, but only when a response from an outside source is successful (lets use Google as an example). When testing of such a method, we would not want to actually make a request to Google, as that takes time and is outside the scope of what we want to ensure. Your test is not there to check any behavior with Google, it just wants to verify that the method returns the right record when a `call_to_google` is successful. Such a method could look like:
 
 ```ruby
 def method_under_test(arg)
@@ -16,12 +16,12 @@ def method_under_test(arg)
 end
 ```
 
-Using a `double` to test this assertion could look like:
+Using a `double` to test this assertion:
 
 ```ruby
 RSpec.describe "#method_under_test" do
   it "returns Record with id of 2" do
-    arg = double("descriptive name", call_to_google: true)
+    arg = double("Successfully response", call_to_google: true)
     expect(method_under_test(arg)).to eq(Record.find(name: "foo"))
   end
 end
@@ -30,10 +30,10 @@ end
 Lets break down the execution code in the example above.
 
 ```ruby
-arg = double("descriptive name for this double", call_to_google: true)
+arg = double("Successfully response", call_to_google: true)
 ```
 
-This line creates an `arg` variable that holds a `double` object. This object has a name of `"descriptive name"`, and then a value of `true` that will be returned when `#call_to_google` is called on `arg`.
+This line creates an `arg` variable that holds a `double` object. This object has a name of `"Successfully response"`, and then a value of `true` that will be returned when `#call_to_google` is called on `arg`.
 
 ```ruby
 expect(method_under_test(arg)).to eq(Record.find(name: "foo"))
