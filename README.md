@@ -21,7 +21,7 @@ Using a `double` to test this assertion:
 ```ruby
 RSpec.describe "#method_under_test" do
   it "returns Record with id of 2" do
-    arg = double("Successfully response", call_to_google: true)
+    arg = double("Successfully responds", call_to_google: true)
     expect(method_under_test(arg)).to eq(Record.find(name: "foo"))
   end
 end
@@ -30,10 +30,10 @@ end
 Let's break down the execution code in the example above.
 
 ```ruby
-arg = double("Successfully response", call_to_google: true)
+arg = double("Successfully responds", call_to_google: true)
 ```
 
-This line creates an `arg` variable that holds a `double` object. This object has a name of `"Successfully response"`, and then a value of `true` that will be returned when `#call_to_google` is called on `arg`.
+This line creates an `arg` variable that holds a `double` object. This object has a name of `"Successfully responds"`, and then a value of `true` that will be returned when `#call_to_google` is called on `arg`.
 
 ```ruby
 expect(method_under_test(arg)).to eq(Record.find(name: "foo"))
